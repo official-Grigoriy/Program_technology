@@ -4,7 +4,8 @@ using System.Text;
 
 namespace Main
 {
-    internal class CsvRepository
+    public class CsvRepository
     {
+
     }
 }

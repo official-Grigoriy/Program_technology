@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Main
 {
-    internal class Dish
+    public class Dish
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -13,5 +13,8 @@ namespace Main
         public decimal Price { get; set; }
         public int Weight { get; set; }
 
+        public decimal PricePerGramm => Price / Weight;
+        public bool IsHeavy => Weight >= 500;
+        public string GetInfo() => $"{Name} ({Price}руб., {Weight}гр.";
     }
 }

@@ -4,28 +4,18 @@ using System.Text;
 
 namespace Main
 {
-    internal class Chef
+    public class Chef
     {
-        //поля
         public int Id { get; set; }
         public string FullName { get; set; }
         public string Specialty { get; set; }
+        public bool IsChef => Specialty == "Шеф-повар";
 
-        //конструкторы
-        public Chef(int id, string fullName, string specialty)
+        public string GetInfo()
         {
-            Id = id;
-            FullName = fullName;
-            Specialty = specialty;
-        }
-        public Chef()
-        {
-            Id = 0;
-            FullName = "None";
-            Specialty = "не устроен";
-        }
+            if (IsChef) return "${ FullName} - { Specialty}";
 
-
-        //свойства
+            return FullName;
+        }
     }
 }
