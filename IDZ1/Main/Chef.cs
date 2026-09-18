@@ -13,7 +13,7 @@ namespace Main
 
         public string GetInfo()
         {
-            if (IsChef) return "${ FullName} - { Specialty}";
+            if (IsChef) return $"{ FullName} - { Specialty}";
 
             return FullName;
         }

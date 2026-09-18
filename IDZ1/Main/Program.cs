@@ -56,9 +56,9 @@
         {
             // 1. FindChef
             Console.WriteLine("1.Введите блюдо");
-            Chef chef = FindChefByDishName("Борщ");
+            Chef chef = FindChefByDishName();
             Console.WriteLine(chef != null ? chef.GetInfo() : "null");
-
+            /*
             // 2. FindCategory
             Console.WriteLine("\n2. FindCategory(\"Борщ\"):");
             Category category = FindCategoryByDishName("Борщ");
@@ -89,22 +89,41 @@
             // 5. PrintAllDishes
             Console.WriteLine("\n5. PrintAllDishes:");
             PrintAllDishes();
+            */
         }
 
-        private static Chef FindChefByDishName(string dishName)
+        private static Chef FindChefByDishName()
         {
+            PrintAllDishes();
+            Console.Write("Введите название блюда: ");
+            string input = Console.ReadLine();
+
+
+            // Защита от null и удаление лишних пробелов по краям
+            if (string.IsNullOrWhiteSpace(input))
+            {
+                return null;
+            }
+
+            string searchName = input.Trim();
             Dish targetDish = null;
+
+            // Поиск блюда по имени
             for (int i = 0; i < dishes.Count; i++)
             {
-                if (dishes[i].Name == dishName)
+                if (dishes[i].Name == searchName)
                 {
                     targetDish = dishes[i];
-                    break;
+                    break; // Находим первое совпадение
                 }
             }
 
-            if (targetDish == null) return null;
+            if (targetDish == null)
+            {
+                return null;
+            }
 
+            // Поиск повара по Id
             for (int i = 0; i < chefs.Count; i++)
             {
                 if (chefs[i].Id == targetDish.Chefid)
