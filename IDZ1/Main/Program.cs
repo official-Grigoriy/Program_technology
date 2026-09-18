@@ -174,7 +174,6 @@
                 }
             }
 
-            // Bubble sort by price
             for (int i = 0; i < chefDishes.Count - 1; i++)
             {
                 for (int j = 0; j < chefDishes.Count - 1 - i; j++)
@@ -187,7 +186,6 @@
                     }
                 }
             }
-
             return chefDishes;
         }
 
