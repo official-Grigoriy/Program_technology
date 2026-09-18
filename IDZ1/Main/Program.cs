@@ -55,8 +55,8 @@
         private static void RunProgram()
         {
             // 1. FindChef
-            Console.WriteLine("1.Введите блюдо");
-            Chef chef = FindChefByDishName("Борщ");
+            Console.WriteLine("1.FindChef(\"Каре ягненка\")");
+            Chef chef = FindChefByDishName("Каре ягненка");
             Console.WriteLine(chef != null ? chef.GetInfo() : "null");
 
             // 2. FindCategory

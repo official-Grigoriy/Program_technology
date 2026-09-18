@@ -35,15 +35,12 @@ namespace Main
             _dishes = new List<Dish>
             {
                 new Dish {Id = 1, Name = "Борщ", Chefid = 1,  Categoryid = 1, Price = 150, Weight = 300},
-                new Dish {Id = 1, Name = "Борщ", Chefid = 2,  Categoryid = 1, Price = 150, Weight = 300},
                 new Dish {Id = 2, Name = "Каре ягненка", Chefid = 2,  Categoryid = 2, Price = 1500, Weight = 600},
                 new Dish {Id = 3, Name = "Паста с грибами", Chefid = 2,  Categoryid = 3, Price = 500, Weight = 250},
-                new Dish {Id = 3, Name = "Паста с грибами", Chefid = 1,  Categoryid = 3, Price = 500, Weight = 250},
                 new Dish {Id = 4, Name = "Пиво", Chefid = 1,  Categoryid = 4, Price = 100, Weight = 500},
                 new Dish {Id = 5, Name = "Сок", Chefid = 1,  Categoryid = 5, Price = 50, Weight = 400},
                 new Dish {Id = 6, Name = "Черный чай", Chefid = 1,  Categoryid = 6, Price = 50, Weight = 500},
                 new Dish {Id = 7, Name = "Графские развалины", Chefid = 1,  Categoryid = 7, Price = 2000, Weight = 700},
-                new Dish {Id = 8, Name = "Пломбир", Chefid = 1,  Categoryid = 8, Price = 100, Weight = 300},
                 new Dish {Id = 8, Name = "Пломбир", Chefid = 3,  Categoryid = 8, Price = 100, Weight = 300},
                 new Dish {Id = 9, Name = "Синабон", Chefid = 1,  Categoryid = 9, Price = 5000, Weight = 400}
             };

@@ -15,6 +15,6 @@ namespace Main
 
         public decimal PricePerGramm => Price / Weight;
         public bool IsHeavy => Weight >= 500;
-        public string GetInfo() => $"{Name} ({Price}руб., {Weight}гр.";
+        public string GetInfo() => $"{Name} ({Price})руб., {Weight}гр.";
     }
 }
