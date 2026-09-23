@@ -4,6 +4,9 @@ using System.Text;
 
 namespace Main
 {
+    /// <summary>
+    /// id, название блюда, id шефа, id категории, цена, вес
+    /// </summary>
     public class Dish
     {
         public int Id { get; set; }

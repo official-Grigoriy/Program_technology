@@ -4,12 +4,18 @@ using System.Text;
 
 namespace Main
 {
+    /// <summary>
+    /// списки шефов, блюд, категорий
+    /// </summary>
     public class InMemoryRepository
     {
         private List<Chef> _chefs;
         private List<Dish> _dishes;
         private List<Category> _categories;
 
+        /// <summary>
+        /// списки данных из памяти
+        /// </summary>
         public InMemoryRepository()
         {
             _chefs = new List<Chef>

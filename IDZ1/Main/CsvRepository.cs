@@ -4,6 +4,9 @@ using System.Text;
 
 namespace Main
 {
+    /// <summary>
+    /// загрузка данных из csv файла
+    /// </summary>
     public class CsvRepository
     {
         private string _basePath;
@@ -13,6 +16,9 @@ namespace Main
             _basePath = basePath;
         }
 
+        /// <summary>
+        /// </summary>
+        /// <returns>список шефов</returns>
         public List<Chef> GetChefs()
         {
             List<Chef> result = new List<Chef>();
@@ -37,6 +43,10 @@ namespace Main
             return result;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>список категорий</returns>
         public List<Category> GetCategories()
         {
             List<Category> result = new List<Category>();
@@ -61,6 +71,10 @@ namespace Main
             return result;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>список блюд</returns>
         public List<Dish> GetDishes()
         {
             List<Dish> result = new List<Dish>();

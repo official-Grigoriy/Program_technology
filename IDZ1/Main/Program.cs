@@ -7,8 +7,8 @@
         private static List<Dish> dishes;
         static void Main()
         {
-            Console.OutputEncoding = System.Text.Encoding.UTF8;
-            Console.InputEncoding = System.Text.Encoding.UTF8;
+            //Console.OutputEncoding = System.Text.Encoding.UTF8;
+            //Console.InputEncoding = System.Text.Encoding.UTF8;
             Console.WriteLine("Выберите источник данных:");
             Console.WriteLine("1. InMemory Repository");
             Console.WriteLine("2. CSV Repository");
@@ -36,6 +36,10 @@
             }
             RunProgram();
         }
+
+        /// <summary>
+        /// загрузка данных из csv файла
+        /// </summary>
         private static void LoadFromInMemoryRepository()
         {
             InMemoryRepository repo = new InMemoryRepository();
@@ -44,6 +48,11 @@
             categories = repo.GetCategories();
             dishes = repo.GetDishes();
         }
+
+        /// <summary>
+        /// загрузка данных из памяти
+        /// </summary>
+        /// <param name="path">путь к папке с csv файлом</param>
         private static void LoadFromCsvRepository(string path)
         {
             CsvRepository repo = new CsvRepository(path);
@@ -52,6 +61,10 @@
             categories = repo.GetCategories();
             dishes = repo.GetDishes();
         }
+
+        /// <summary>
+        /// метод для запуска всего остального
+        /// </summary>
         private static void RunProgram()
         {
             // 1. FindChef
@@ -91,6 +104,11 @@
             PrintAllDishes();
         }
 
+        /// <summary>
+        /// найти шеффа по блюду
+        /// </summary>
+        /// <param name="dishName">Название блюда</param>
+        /// <returns>Имя шефа и должность</returns>
         private static Chef FindChefByDishName(string dishName)
         {
             Dish targetDish = null;
@@ -116,6 +134,11 @@
             return null;
         }
 
+        /// <summary>
+        /// найти категорию к которой принадлежит блюдо
+        /// </summary>
+        /// <param name="dishName">название блюда</param>
+        /// <returns>Инмя категории</returns>
         private static Category FindCategoryByDishName(string dishName)
         {
             Dish targetDish = null;
@@ -141,6 +164,10 @@
             return null;
         }
 
+        /// <summary>
+        /// суммарный вес всех блюд
+        /// </summary>
+        /// <returns>вес всех блюд</returns>
         private static int GetTotalWeight()
         {
             int total = 0;
@@ -151,6 +178,11 @@
             return total;
         }
 
+        /// <summary>
+        /// блюда повара по цене
+        /// </summary>
+        /// <param name="chefName">имя шефа</param>
+        /// <returns>список блюд шефа по цене</returns>
         private static List<Dish> GetDishesByChefSortedByPrice(string chefName)
         {
             Chef targetChef = null;
@@ -189,6 +221,9 @@
             return chefDishes;
         }
 
+        /// <summary>
+        /// вывести все блюда
+        /// </summary>
         private static void PrintAllDishes()
         {
             for (int i = 0; i < dishes.Count; i++)
