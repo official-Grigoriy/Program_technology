@@ -22,17 +22,28 @@
                 Console.WriteLine("неверный ввод");
                 return;
             }
-            switch (choice)
+            try
             {
-                case 1:
-                    LoadFromInMemoryRepository();
-                    break;
-                case 2:
-                    LoadFromCsvRepository("E:\\Code_Projects\\C#\\IDZ1\\Main\\data");
-                    break;
-                default:
-                    Console.WriteLine("неверный выбор");
-                    return;
+                switch (choice)
+                {
+                    case 1:
+                        LoadFromInMemoryRepository();
+                        break;
+                    case 2:
+                        LoadFromCsvRepository("E:\\Code_Projects\\C#\\IDZ1\\Main\\data");
+                        break;
+                    default:
+                        Console.WriteLine("неверный выбор");
+                        return;
+                }
+            }
+            catch (ArgumentException ex)
+            {
+                Console.WriteLine($"Ошибка в данных: {ex.Message}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Ошибка при загрузке данных {ex.Message}");
             }
             RunProgram();
         }
